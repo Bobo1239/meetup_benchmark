@@ -14,15 +14,20 @@ print_filesize "./rust/target/release/rust"
 echo
 
 echo "Building D (dmd) version..."
-docker run -ti dlanguage/dmd dmd --version
+docker run -ti dlanguage/dmd dmd --version | head -n 1
 ( cd d; docker run -v $(pwd):/work -w /work dlanguage/dmd dmd -O -release -inline -of=prog_dmd prog.d )
 print_filesize "d/prog_dmd"
 echo
 
 echo "Building D (ldc) version..."
-docker run -ti dlanguage/ldc ldc2 --version
+docker run -ti dlanguage/ldc ldc2 --version | head -n 1
 ( cd d; docker run -v $(pwd):/work -w /work dlanguage/ldc ldc2 -O3 -release -of=prog_ldc prog.d )
 print_filesize "d/prog_ldc"
+echo
+
+echo "Building AWK ^^ version..."
+awk --version | head -n 1
+print_filesize "awk/prog.sh"
 echo
 
 echo "Benching..."
