@@ -28,5 +28,6 @@ test rust  ... bench:  11,573,562 ns/iter (+/- 864,141)
 With `test.large` which is 370 Mb and not included in this repository.
 Only tested with a simple `time cat test.large | <prog>` (warmed file cache).
 
-- Rust: 1.168s
-- D (dmd): 4.952s
+- Rust: 1.166s
+- D (dmd): 4.106s
+- D (ldc): 1.329s
