@@ -32,6 +32,11 @@ fn d_ldc(b: &mut Bencher) {
 }
 
 #[bench]
+fn awk(b: &mut Bencher) {
+    b.iter(|| { run("../awk/prog.sh"); })
+}
+
+#[bench]
 fn rust(b: &mut Bencher) {
     b.iter(|| { run("../rust/target/release/rust"); })
 }
