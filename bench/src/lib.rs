@@ -22,8 +22,13 @@ fn run(command: &str) {
 }
 
 #[bench]
-fn d(b: &mut Bencher) {
-    b.iter(|| { run("../d/prog"); })
+fn d_dmd(b: &mut Bencher) {
+    b.iter(|| { run("../d/prog_dmd"); })
+}
+
+#[bench]
+fn d_ldc(b: &mut Bencher) {
+    b.iter(|| { run("../d/prog_ldc"); })
 }
 
 #[bench]

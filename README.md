@@ -18,8 +18,9 @@ Credits:
 ## Results on my laptop (i7-6600U):
 
 ```
-test d    ... bench:  46,421,643 ns/iter (+/- 1,902,760)
-test rust ... bench:  12,253,769 ns/iter (+/- 1,092,902)
+test d_dmd ... bench:  41,720,325 ns/iter (+/- 2,205,311)
+test d_ldc ... bench:  14,314,630 ns/iter (+/- 2,000,920)
+test rust  ... bench:  11,573,562 ns/iter (+/- 864,141)
 ```
 
 ## Bonus Round
