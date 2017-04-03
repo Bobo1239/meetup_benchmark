@@ -1,7 +1,6 @@
 #!/bin/bash
 
 RUST_FLAGS="--release"
-D_FLAGS="-O -release"
 
 function print_filesize {
     size=$(expr $(stat $1 --printf="%s") / 1024)
@@ -15,14 +14,14 @@ print_filesize "./rust/target/release/rust"
 echo
 
 echo "Building D (dmd) version..."
-dmd --version
-( cd d; dmd $D_FLAGS -of=prog_dmd prog.d )
+docker run -ti dlanguage/dmd dmd --version
+( cd d; docker run -v $(pwd):/work -w /work dlanguage/dmd dmd -O -release -inline -of=prog_dmd prog.d )
 print_filesize "d/prog_dmd"
 echo
 
 echo "Building D (ldc) version..."
-ldc --version
-( cd d; ldc $D_FLAGS -of=prog_ldc prog.d )
+docker run -ti dlanguage/ldc ldc2 --version
+( cd d; docker run -v $(pwd):/work -w /work dlanguage/ldc ldc2 -O3 -release -of=prog_ldc prog.d )
 print_filesize "d/prog_ldc"
 echo
 
