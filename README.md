@@ -15,10 +15,17 @@ Credits:
 - Rust version by me (Bobo1239)
 - D version by [Stefan](https://www.meetup.com/Munich-D-Programmers/members/184727568/)
 
+## Results on my laptop (i7-6600U):
+
+```
+test d    ... bench:  46,421,643 ns/iter (+/- 1,902,760)
+test rust ... bench:  12,253,769 ns/iter (+/- 1,092,902)
+```
+
 ## Bonus Round
 
 With `test.large` which is 370 Mb and not included in this repository.
-Only tested with a simple `time cat test.large | <prog>`.
+Only tested with a simple `time cat test.large | <prog>` (warmed file cache).
 
 - Rust: 1.168s
 - D (dmd): 4.952s
