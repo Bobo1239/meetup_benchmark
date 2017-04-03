@@ -11,16 +11,21 @@ running `rustup override add nightly` in this directory.
 
 More versions are welcome! Just send a pull request. I can take care of adding it to the benchmark.
 
+Notes:
+- The awk version is currently doing not the exact same work as the other versions.
+
 Credits:
-- Rust version by me (Bobo1239)
+- Rust version by [Bobo1239](https://github.com/bobo1239)
 - D version by [Stefan](https://www.meetup.com/Munich-D-Programmers/members/184727568/)
+- awk version by [lindt](https://github.com/lindt)
 
 ## Results on my laptop (i7-6600U):
 
 ```
-test d_dmd ... bench:  41,720,325 ns/iter (+/- 2,205,311)
-test d_ldc ... bench:  14,314,630 ns/iter (+/- 2,000,920)
-test rust  ... bench:  11,573,562 ns/iter (+/- 864,141)
+test awk   ... bench:  45,051,931 ns/iter (+/- 4,210,627)
+test d_dmd ... bench:  29,407,859 ns/iter (+/- 1,739,340)
+test d_ldc ... bench:   8,995,251 ns/iter (+/- 578,541)
+test rust  ... bench:  11,818,265 ns/iter (+/- 1,019,974)
 ```
 
 ## Bonus Round
@@ -28,6 +33,7 @@ test rust  ... bench:  11,573,562 ns/iter (+/- 864,141)
 With `test.large` which is 370 Mb and not included in this repository.
 Only tested with a simple `time cat test.large | <prog>` (warmed file cache).
 
-- Rust: 1.166s
-- D (dmd): 4.106s
-- D (ldc): 1.329s
+- awk: 4.057s
+- Rust: 1.054s
+- D (dmd): 2.842s
+- D (ldc): 0.855s
