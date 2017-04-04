@@ -16,8 +16,9 @@ Notes:
 
 Credits:
 - Rust version by [Bobo1239](https://github.com/bobo1239)
-- D version by [Stefan](https://www.meetup.com/Munich-D-Programmers/members/184727568/)
-- awk version by [lindt](https://github.com/lindt)
+- D version by [Stefan](https://github.com/lindt)
+- awk version by [Fabian](https://github.com/fstab)
+- py version by [Simon](https://github.com/s1hofmann) (modified by [lindt](https://github.com/lindt))
 
 ## Results on my laptop (i7-6600U):
 
