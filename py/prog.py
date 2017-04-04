@@ -18,4 +18,4 @@ def parse(arg, col, mode):
         print(col, "[SUM]:", sum)
 
 if __name__ == "__main__":
-    parse(stdin, col=1, mode=1)
+    parse(stdin, col=1, mode=1)  # TODO: consider two columns like the other variants
