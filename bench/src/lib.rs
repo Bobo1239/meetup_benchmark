@@ -37,6 +37,11 @@ fn awk(b: &mut Bencher) {
 }
 
 #[bench]
+fn py(b: &mut Bencher) {
+    b.iter(|| { run("../py/prog.py"); })
+}
+
+#[bench]
 fn rust(b: &mut Bencher) {
     b.iter(|| { run("../rust/target/release/rust"); })
 }
