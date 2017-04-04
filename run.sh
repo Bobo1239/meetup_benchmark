@@ -30,5 +30,10 @@ awk --version | head -n 1
 print_filesize "awk/prog.sh"
 echo
 
+echo "Building Python ^^ version..."
+python --version | head -n 1
+print_filesize "py/prog.py"
+echo
+
 echo "Benching..."
 ( cd bench; cargo bench )
