@@ -12,21 +12,22 @@ running `rustup override add nightly` in this directory.
 More versions are welcome! Just send a pull request. I can take care of adding it to the benchmark.
 
 Notes:
-- The awk version is currently doing not the exact same work as the other versions.
+- The awk and Python versions are currently doing not the exact same work as the other versions.
 
 Credits:
 - Rust version by [Bobo1239](https://github.com/bobo1239)
 - D version by [Stefan](https://github.com/lindt)
 - awk version by [Fabian](https://github.com/fstab)
-- py version by [Simon](https://github.com/s1hofmann) (modified by [lindt](https://github.com/lindt))
+- Python version by [Simon](https://github.com/s1hofmann) (modified by [lindt](https://github.com/lindt))
 
 ## Results on my laptop (i7-6600U):
 
 ```
-test awk   ... bench:  45,051,931 ns/iter (+/- 4,210,627)
-test d_dmd ... bench:  29,407,859 ns/iter (+/- 1,739,340)
-test d_ldc ... bench:   8,995,251 ns/iter (+/- 578,541)
-test rust  ... bench:  11,818,265 ns/iter (+/- 1,019,974)
+test awk   ... bench:  44,181,760 ns/iter (+/- 1,710,389)
+test d_dmd ... bench:  29,050,515 ns/iter (+/- 729,064)
+test d_ldc ... bench:   8,891,791 ns/iter (+/- 319,921)
+test py    ... bench:  97,129,528 ns/iter (+/- 2,060,208)
+test rust  ... bench:  11,591,400 ns/iter (+/- 322,248)
 ```
 
 ## Bonus Round
@@ -34,7 +35,8 @@ test rust  ... bench:  11,818,265 ns/iter (+/- 1,019,974)
 With `test.large` which is 370 Mb and not included in this repository.
 Only tested with a simple `time cat test.large | <prog>` (warmed file cache).
 
-- awk: 4.057s
-- Rust: 1.054s
-- D (dmd): 2.842s
-- D (ldc): 0.855s
+- awk: 4.078s
+- Rust: 1.039s
+- D (dmd): 2.793s
+- D (ldc): 0.893s
+- Python: 7.405s
