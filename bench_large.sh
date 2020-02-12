@@ -13,4 +13,5 @@ bench_large "awk" ./awk/prog.sh
 bench_large "Rust" ./rust/target/release/rust
 bench_large "D (dmd)" ./d/prog_dmd
 bench_large "D (ldc)" ./d/prog_ldc
+bench_large "D (gdc)" ./d/prog_gdc
 bench_large "Python" ./py/prog.py

@@ -20,23 +20,25 @@ Credits:
 - awk version by [Fabian](https://github.com/fstab)
 - Python version by [Simon](https://github.com/s1hofmann) (modified by [lindt](https://github.com/lindt))
 
-## Results on my laptop (i7-6600U):
+## Results on my workstation (AMD Ryzen 9 3950X):
 
 ```
-test awk   ... bench:  44,181,760 ns/iter (+/- 1,710,389)
-test d_dmd ... bench:  29,050,515 ns/iter (+/- 729,064)
-test d_ldc ... bench:   8,891,791 ns/iter (+/- 319,921)
-test py    ... bench:  97,129,528 ns/iter (+/- 2,060,208)
-test rust  ... bench:  11,591,400 ns/iter (+/- 322,248)
+test awk   ... bench:  34,227,744 ns/iter (+/- 2,163,885)
+test d_dmd ... bench:  18,091,353 ns/iter (+/- 1,489,948)
+test d_gdc ... bench:  10,590,457 ns/iter (+/- 1,629,433)
+test d_ldc ... bench:  10,381,016 ns/iter (+/- 1,387,163)
+test py    ... bench:  56,565,560 ns/iter (+/- 6,188,942)
+test rust  ... bench:   9,189,600 ns/iter (+/- 1,224,436)
 ```
 
 ## Bonus Round
 
-With `test.large` which is 370 Mb and not included in this repository.
+With `test.large` which is 389 MB and not included in this repository.
 Only tested with a simple `time cat test.large | <prog>` (warmed file cache).
 
-- awk: 4.078s
-- Rust: 1.039s
-- D (dmd): 2.793s
-- D (ldc): 0.893s
-- Python: 7.405s
+- awk: 2.747s
+- Rust: 0.665s
+- D (dmd): 1.632s
+- D (ldc): 0.670s
+- D (gdc): 0.806s
+- Python: 4.086s

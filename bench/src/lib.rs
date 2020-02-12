@@ -32,6 +32,11 @@ fn d_ldc(b: &mut Bencher) {
 }
 
 #[bench]
+fn d_gdc(b: &mut Bencher) {
+    b.iter(|| { run("../d/prog_gdc"); })
+}
+
+#[bench]
 fn awk(b: &mut Bencher) {
     b.iter(|| { run("../awk/prog.sh"); })
 }
